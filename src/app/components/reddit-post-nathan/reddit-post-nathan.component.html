@@ -1,0 +1,23 @@
+<div class="posts">
+    @for (post of posts; track post.id) {
+    <mat-card id="post_{{post.id}}" class="post">
+      <mat-card-content>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+      <mat-card-subtitle> Por <a target="_blank" href='https://www.reddit.com/user/{{post.author}}'>&#64;{{ post.author }}</a></mat-card-subtitle>
+    </mat-card-content>
+      <mat-card-actions>
+      <a mat-button target="_blank" href='https://www.reddit.com/r/all/comments/{{post.id}}'>Leer más . . . </a>
+      <button mat-button type="button" (click)="mostrarComentarios(post.id)">Comentarios</button>
+    </mat-card-actions>
+      <mat-card id="comentarios_{{post.id}}" class="comentarios"></mat-card>
+      
+      <mat-icon  (click)="mostrarComentarios(post.id)" class="flecha" >keyboard_arrow_down</mat-icon>
+  
+      </mat-card>
+
+    }
+
+
+ 
+  </div>
+  
